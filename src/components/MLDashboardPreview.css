@@ -1,0 +1,489 @@
+.ml-dashboard-preview {
+  font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 20px;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+}
+
+.dashboard-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 20px;
+  padding-bottom: 15px;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.dashboard-header h2 {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1e293b;
+  margin: 0;
+}
+
+.ticker-info {
+  text-align: right;
+}
+
+.ticker-name {
+  font-size: 18px;
+  font-weight: 500;
+  color: #334155;
+}
+
+.ticker-segment {
+  font-size: 14px;
+  color: #64748b;
+  margin-top: 4px;
+}
+
+.dashboard-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  grid-gap: 20px;
+  margin-bottom: 20px;
+}
+
+.grid-item {
+  background-color: #ffffff;
+  border-radius: 8px;
+  padding: 20px;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+}
+
+.grid-item h3 {
+  font-size: 18px;
+  font-weight: 600;
+  color: #334155;
+  margin-top: 0;
+  margin-bottom: 15px;
+  padding-bottom: 10px;
+  border-bottom: 1px solid #f1f5f9;
+}
+
+/* Estilos para o gráfico de previsão */
+.chart-container {
+  width: 100%;
+}
+
+.chart-header {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.current-price {
+  display: flex;
+  flex-direction: column;
+}
+
+.current-price .price {
+  font-size: 24px;
+  font-weight: 600;
+  color: #1e293b;
+}
+
+.current-price .change {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.change.positive {
+  color: #10b981;
+}
+
+.change.negative {
+  color: #ef4444;
+}
+
+.forecast-info {
+  display: flex;
+  flex-direction: column;
+  text-align: right;
+}
+
+.trend, .confidence {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  margin-bottom: 5px;
+}
+
+.trend .label, .confidence .label {
+  font-size: 14px;
+  color: #64748b;
+  margin-right: 8px;
+}
+
+.trend .value, .confidence .value {
+  font-size: 14px;
+  font-weight: 500;
+}
+
+.trend .value.positive {
+  color: #10b981;
+}
+
+.trend .value.negative {
+  color: #ef4444;
+}
+
+.trend .value.neutral {
+  color: #64748b;
+}
+
+/* Estilos para análise de sentimento */
+.sentiment-container {
+  width: 100%;
+}
+
+.sentiment-gauge {
+  margin-bottom: 20px;
+}
+
+.sentiment-meter {
+  height: 10px;
+  background-color: #e2e8f0;
+  border-radius: 5px;
+  margin-bottom: 8px;
+  overflow: hidden;
+}
+
+.sentiment-value {
+  height: 100%;
+  background-color: #10b981;
+  border-radius: 5px;
+}
+
+.sentiment-label {
+  font-size: 16px;
+  font-weight: 600;
+  margin-bottom: 4px;
+}
+
+.sentiment-label.very-positive {
+  color: #059669;
+}
+
+.sentiment-label.positive {
+  color: #10b981;
+}
+
+.sentiment-label.neutral {
+  color: #64748b;
+}
+
+.sentiment-label.negative {
+  color: #f43f5e;
+}
+
+.sentiment-label.very-negative {
+  color: #e11d48;
+}
+
+.sentiment-confidence {
+  font-size: 14px;
+  color: #64748b;
+}
+
+.sentiment-wordcloud {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin-bottom: 20px;
+  min-height: 100px;
+  background-color: #f8fafc;
+  border-radius: 8px;
+  padding: 15px;
+}
+
+.wordcloud-item {
+  margin: 5px;
+  color: #334155;
+}
+
+.recent-news h4 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #334155;
+  margin-bottom: 10px;
+}
+
+.news-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.news-item {
+  padding: 10px;
+  border-radius: 6px;
+  margin-bottom: 8px;
+  background-color: #f8fafc;
+  border-left: 4px solid #cbd5e1;
+}
+
+.news-item.very-positive {
+  border-left-color: #059669;
+}
+
+.news-item.positive {
+  border-left-color: #10b981;
+}
+
+.news-item.neutral {
+  border-left-color: #64748b;
+}
+
+.news-item.negative {
+  border-left-color: #f43f5e;
+}
+
+.news-item.very-negative {
+  border-left-color: #e11d48;
+}
+
+.news-title {
+  font-size: 14px;
+  font-weight: 500;
+  color: #334155;
+  margin-bottom: 4px;
+}
+
+.news-date {
+  font-size: 12px;
+  color: #64748b;
+}
+
+/* Estilos para detecção de anomalias */
+.anomalies-container {
+  width: 100%;
+}
+
+.anomaly-status {
+  display: flex;
+  align-items: center;
+  margin-bottom: 20px;
+}
+
+.status-indicator {
+  width: 16px;
+  height: 16px;
+  border-radius: 50%;
+  margin-right: 10px;
+}
+
+.status-indicator.low {
+  background-color: #10b981;
+}
+
+.status-indicator.medium {
+  background-color: #f59e0b;
+}
+
+.status-indicator.high {
+  background-color: #ef4444;
+}
+
+.status-text {
+  font-size: 16px;
+  font-weight: 500;
+  color: #334155;
+}
+
+.anomalies-detected h4 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #334155;
+  margin-bottom: 10px;
+}
+
+.anomalies-table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+.anomalies-table th, .anomalies-table td {
+  padding: 8px;
+  text-align: left;
+  border-bottom: 1px solid #e2e8f0;
+}
+
+.anomalies-table th {
+  font-weight: 500;
+  color: #64748b;
+  font-size: 14px;
+}
+
+.anomalies-table td {
+  font-size: 14px;
+  color: #334155;
+}
+
+.anomalies-table td.high {
+  color: #ef4444;
+  font-weight: 500;
+}
+
+.anomalies-table td.medium {
+  color: #f59e0b;
+  font-weight: 500;
+}
+
+.anomalies-table td.low {
+  color: #10b981;
+  font-weight: 500;
+}
+
+.no-anomalies {
+  padding: 20px;
+  text-align: center;
+  background-color: #f8fafc;
+  border-radius: 6px;
+  color: #64748b;
+  font-size: 14px;
+}
+
+/* Estilos para recomendações */
+.recommendation-container {
+  width: 100%;
+}
+
+.recommendation-header {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 15px;
+  border-radius: 8px;
+  margin-bottom: 20px;
+}
+
+.recommendation-header.strong-buy {
+  background-color: #dcfce7;
+}
+
+.recommendation-header.buy {
+  background-color: #d1fae5;
+}
+
+.recommendation-header.hold {
+  background-color: #f1f5f9;
+}
+
+.recommendation-header.sell {
+  background-color: #fee2e2;
+}
+
+.recommendation-header.strong-sell {
+  background-color: #fecaca;
+}
+
+.recommendation-action {
+  font-size: 20px;
+  font-weight: 600;
+  margin-bottom: 5px;
+}
+
+.recommendation-header.strong-buy .recommendation-action {
+  color: #059669;
+}
+
+.recommendation-header.buy .recommendation-action {
+  color: #10b981;
+}
+
+.recommendation-header.hold .recommendation-action {
+  color: #64748b;
+}
+
+.recommendation-header.sell .recommendation-action {
+  color: #f43f5e;
+}
+
+.recommendation-header.strong-sell .recommendation-action {
+  color: #e11d48;
+}
+
+.recommendation-score, .recommendation-confidence {
+  font-size: 14px;
+  color: #334155;
+}
+
+.recommendation-components {
+  margin-bottom: 20px;
+}
+
+.component {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+}
+
+.component-label {
+  width: 100px;
+  font-size: 14px;
+  color: #64748b;
+}
+
+.component-bar {
+  flex-grow: 1;
+  height: 8px;
+  background-color: #e2e8f0;
+  border-radius: 4px;
+  margin: 0 10px;
+  overflow: hidden;
+}
+
+.component-value {
+  height: 100%;
+  border-radius: 4px;
+}
+
+.component-score {
+  width: 50px;
+  font-size: 14px;
+  font-weight: 500;
+  text-align: right;
+}
+
+.recommendation-reasons h4 {
+  font-size: 16px;
+  font-weight: 500;
+  color: #334155;
+  margin-bottom: 10px;
+}
+
+.recommendation-reasons ul {
+  padding-left: 20px;
+  margin: 0;
+}
+
+.recommendation-reasons li {
+  font-size: 14px;
+  color: #334155;
+  margin-bottom: 6px;
+}
+
+/* Estilos para o rodapé */
+.dashboard-footer {
+  margin-top: 20px;
+  padding-top: 15px;
+  border-top: 1px solid #e2e8f0;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.disclaimer {
+  font-size: 12px;
+  color: #64748b;
+  max-width: 70%;
+}
+
+.last-updated {
+  font-size: 12px;
+  color: #94a3b8;
+}
